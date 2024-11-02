@@ -105,7 +105,18 @@ header {
 }
 
 .hero-section {
-  padding-block: 85px;
+  padding-top: 85px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-section .shape {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  bottom: 5px;
+  z-index: -1;
+  max-width: 100%;
 }
 
 .hero-wrapper {
@@ -174,6 +185,7 @@ header {
   height: 48px;
   background-color: transparent;
   box-shadow: none !important;
+  background-color: rgba(1, 1, 1, 0.8666666667);
   border: 1px solid #262626;
   border-radius: 10px;
   width: 100%;

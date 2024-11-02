@@ -111,7 +111,18 @@ header {
 
 // hero section start
 .hero-section {
-  padding-block: 85px;
+  padding-top: 85px;
+  position: relative;
+  overflow: hidden;
+  .shape {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    bottom: 5px;
+    z-index: -1;
+    max-width: 100%;
+  }
 }
 .hero-wrapper {
   text-align: center;
@@ -173,6 +184,7 @@ header {
       height: 48px;
       background-color: transparent;
       box-shadow: none !important;
+      background-color: #010101dd;
       border: 1px solid #262626;
       border-radius: 10px;
       width: 100%;
