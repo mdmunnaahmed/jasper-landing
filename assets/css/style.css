@@ -67,6 +67,23 @@ header {
   position: relative;
   border-radius: 20px;
   background-color: transparent;
+  overflow: hidden;
+  border-radius: 12px;
+}
+.header-wrapper .gradient-button:hover::after {
+  opacity: 1;
+}
+.header-wrapper .gradient-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 2px;
+  background: linear-gradient(45deg, #624e9a, #b77eef);
+  opacity: 0;
+  transition: all 0.3s linear;
 }
 .header-wrapper .gradient-button::before {
   content: "";
@@ -77,7 +94,7 @@ header {
   bottom: 0;
   border-radius: 12px;
   padding: 2px;
-  background: linear-gradient(135deg, #ff00ff, #00ffff);
+  background: linear-gradient(45deg, #624e9a, #b77eef);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: destination-out;
   mask-composite: exclude;
@@ -85,11 +102,6 @@ header {
 .header-wrapper .gradient-button span {
   position: relative;
   z-index: 1;
-}
-.header-wrapper .button {
-  height: 63px;
-  padding: 6px 24px;
-  font-size: 16px;
 }
 
 .hero-section {
@@ -118,7 +130,7 @@ header {
   color: inherit;
 }
 .top-badge a:hover {
-  color: #00ffff;
+  color: #8c70da;
 }
 
 .title {

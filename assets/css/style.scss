@@ -68,31 +68,43 @@ header {
     position: relative;
     border-radius: 20px;
     background-color: transparent;
-  }
-
-  .gradient-button::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    overflow: hidden;
     border-radius: 12px;
-    padding: 2px;
-    background: linear-gradient(135deg, #ff00ff, #00ffff);
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: destination-out;
-    mask-composite: exclude;
-  }
-
-  .gradient-button span {
-    position: relative;
-    z-index: 1;
-  }
-  .button {
-    height: 63px;
-    padding: 6px 24px;
-    font-size: 16px;
+    &:hover {
+      &::after {
+        opacity: 1;
+      }
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 2px;
+      background: linear-gradient(45deg, #624e9a, #b77eef);
+      opacity: 0;
+      transition: all 0.3s linear;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 12px;
+      padding: 2px;
+      background: linear-gradient(45deg, #624e9a, #b77eef);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: destination-out;
+      mask-composite: exclude;
+    }
+    span {
+      position: relative;
+      z-index: 1;
+    }
   }
 }
 // header section end
@@ -120,7 +132,7 @@ header {
   a {
     color: inherit;
     &:hover {
-      color: #00ffff;
+      color: #8c70da;
     }
   }
 }
