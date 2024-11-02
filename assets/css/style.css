@@ -136,6 +136,7 @@ header {
 .title {
   font-size: 80px;
   margin-bottom: 12px;
+  letter-spacing: -2.75px;
 }
 
 .subtitle {
