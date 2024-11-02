@@ -29,6 +29,7 @@ body {
   line-height: 1.65;
   font-weight: 400;
   font-size: 16px;
+  overflow-x: hidden;
 }
 
 h1,
@@ -37,6 +38,10 @@ h3 {
   line-height: 1.2;
   font-weight: 400;
   font-family: "GreycliffCF Demibold", sans-serif;
+}
+
+button {
+  cursor: pointer;
 }
 
 .container {
@@ -212,6 +217,10 @@ header {
   font-family: "GreycliffCF DemiBold", sans-serif;
   font-weight: 400;
   font-size: 16px;
+  transition: all 0.15s linear;
+}
+.subscription-wrapper .form-group button:hover {
+  background-color: white;
 }
 
 .video-wrapper {
@@ -294,8 +303,12 @@ header {
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
+.feature-grid:hover .feature-item {
+  background: radial-gradient(100rem circle at var(--xPos) var(--yPos), rgba(255, 255, 255, 0.08), transparent 15%);
+}
 
 .feature-item {
+  aspect-ratio: 1;
   background-color: rgba(38, 38, 38, 0.2);
   border: 1px solid rgba(38, 38, 38, 0.7019607843);
   padding: 30px;
@@ -304,13 +317,34 @@ header {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  position: relative;
+  transition: all 0.15s;
+  background: radial-gradient(150rem circle at 0 0, rgba(0, 0, 255, 0), transparent 15%);
 }
 .feature-item:nth-of-type(2n) {
   flex-direction: column-reverse;
 }
+.feature-item:hover {
+  transform: scale(0.97);
+}
+.feature-item:hover::before {
+  opacity: 1;
+}
+.feature-item::before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: inherit;
+  background: radial-gradient(160rem circle at var(--xPos) var(--yPos), rgba(255, 255, 255, 0), transparent 90%);
+  opacity: 0;
+  transition: all 0.15s ease-in-out;
+}
 .feature-item .icon {
   margin-inline: auto;
-  width: 150px;
+  width: 130px;
   aspect-ratio: 1;
   border: 1px solid rgba(38, 38, 38, 0.7019607843);
   display: flex;
@@ -318,9 +352,38 @@ header {
   justify-content: center;
   border-radius: 10px;
 }
-.feature-item .icon img, .feature-item .icon svg {
+.feature-item .icon img,
+.feature-item .icon svg {
   width: 60%;
 }
 .feature-item .content .title {
   font-size: 22px;
+}
+
+.cta-section {
+  padding-bottom: 110px;
+}
+.cta-section .section-subtitle {
+  max-width: 500px;
+  margin-inline: auto;
+}
+.cta-section .button {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  height: 48px;
+  background-color: #e6e6e6;
+  color: #262626;
+  box-shadow: none !important;
+  border: none !important;
+  padding: 6px 16px;
+  border-radius: 10px;
+  font-family: "GreycliffCF DemiBold", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  transition: all 0.15s linear;
+  margin-top: 32px;
+}
+.cta-section .button:hover {
+  background-color: white;
 }
