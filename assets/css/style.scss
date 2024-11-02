@@ -310,7 +310,7 @@ header {
   gap: 20px;
   &:hover {
     .feature-item {
-      background: radial-gradient(100rem circle at var(--xPos) var(--yPos), rgba(255, 255, 255, 0.08), transparent 15%);
+      background-image: radial-gradient(100rem circle at var(--xPos) var(--yPos), rgba(255, 255, 255, 0.08), transparent 15%);
     }
   }
 }
@@ -326,7 +326,7 @@ header {
   gap: 30px;
   position: relative;
   transition: all 0.15s;
-  background: radial-gradient(150rem circle at 0 0, rgba(blue, 0), transparent 15%);
+  background-image: radial-gradient(150rem circle at 0 0, rgba(blue, 0), transparent 15%);
   &:nth-of-type(2n) {
     flex-direction: column-reverse;
   }
