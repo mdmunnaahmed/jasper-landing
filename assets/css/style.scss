@@ -1,0 +1,173 @@
+@font-face {
+  font-family: "GreycliffCF DemiBold";
+  src: url("./fonts/GreycliffCF-DemiBold.woff2");
+}
+@font-face {
+  font-family: "GreycliffCF Medium";
+  src: url("./fonts/GreycliffCF-Medium.woff2");
+}
+@font-face {
+  font-family: "GreycliffCF Light";
+  src: url("./fonts/GreycliffCF-Light.woff2");
+}
+html {
+  font-size: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;
+  padding: 0;
+  color: #fafafa;
+  background-color: #010101;
+  font-family: "GreycliffCF Light", sans-serif;
+  line-height: 1.65;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  font-weight: 400;
+  font-family: "GreycliffCF Demibold", sans-serif;
+}
+
+.container {
+  max-width: 1232px;
+  padding-inline: 16px;
+  margin-inline: auto;
+}
+
+// hero section start
+.hero-section {
+  padding-block: 85px;
+}
+.hero-wrapper {
+  text-align: center;
+  max-width: 850px;
+  margin-inline: auto;
+}
+.top-badge {
+  font-size: 14px;
+  color: #a3a3a3;
+  background-color: #262626;
+  font-family: "GreycliffCF Medium", sans-serif;
+  font-weight: 400;
+  display: inline-block;
+  padding: 4px 16px 3px;
+  border-radius: 25px;
+  border: 1px solid #73737333;
+  margin-bottom: 32px;
+}
+.title {
+  font-size: 80px;
+  margin-bottom: 12px;
+}
+.subtitle {
+  font-size: 17px;
+  max-width: 590px;
+  margin-inline: auto;
+  line-height: 1.65;
+  font-family: "GreycliffCF Medium", sans-serif;
+  font-weight: 400;
+  color: #a3a3a3;
+}
+.subscription-wrapper {
+  max-width: 550px;
+  margin-inline: auto;
+  margin-top: 32px;
+  .form-group {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    position: relative;
+    width: 100%;
+    svg {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 16px;
+    }
+    .form-input {
+      flex-grow: 1;
+    }
+    .form-control {
+      height: 48px;
+      background-color: transparent;
+      box-shadow: none !important;
+      border: 1px solid #262626;
+      border-radius: 10px;
+      width: 100%;
+      color: #fafafa;
+      padding-left: 50px;
+      font-size: 16px;
+      &:focus {
+        outline: 1.5px solid #fafafa;
+        outline-offset: 3px;
+      }
+    }
+    button {
+      height: 48px;
+      background-color: #e6e6e6;
+      color: #262626;
+      box-shadow: none !important;
+      border: none !important;
+      padding: 6px 16px;
+      border-radius: 10px;
+      font-family: "GreycliffCF DemiBold", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+    }
+  }
+}
+
+.video-wrapper {
+  max-width: 950px;
+  margin-inline: auto;
+  text-align: center;
+  margin-top: 85px;
+  border-radius: 32px;
+  height: 100%;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.01), 0 0 90px rgba(255, 255, 255, 0.05), 0 0 145px rgba(255, 255, 255, 0.1);
+  transition: box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  &::before {
+    position: absolute;
+    content: "";
+    width: 120%;
+    aspect-ratio: 1;
+    background: conic-gradient(from 0deg, #ffffff45, #ffffffb1, #ffffff25, #ffffff47);
+    animation: rotate 5s linear infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  video {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    border-radius: 32px;
+    margin-bottom: -9px;
+    padding: 2px;
+  }
+}
+@keyframes rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+// hero section end
