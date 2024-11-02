@@ -116,7 +116,7 @@ header {
   overflow: hidden;
   &::before {
     position: absolute;
-    content: '';
+    content: "";
     height: 10px;
     bottom: 0;
     background-color: #010101;
@@ -263,3 +263,23 @@ header {
   }
 }
 // hero section end
+
+// feature section start
+.section-header {
+  text-align: center;
+  margin-bottom: 48px;
+  .section-title {
+    font-size: 39px;
+    letter-spacing: -1.75px;
+  }
+  .section-subtitle {
+    font-size: 16px;
+    margin-top: 8px;
+  }
+}
+
+.feature-section {
+  padding-top: 110px;
+  padding-bottom: 110px;
+}
+// feature section end
