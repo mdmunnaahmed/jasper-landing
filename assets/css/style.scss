@@ -114,14 +114,22 @@ header {
   padding-top: 85px;
   position: relative;
   overflow: hidden;
+  &::before {
+    position: absolute;
+    content: '';
+    height: 10px;
+    bottom: 0;
+    background-color: #010101;
+    width: 100%;
+  }
   .shape {
     position: absolute;
     left: 0;
-    height: 100%;
     width: 100%;
-    bottom: 5px;
+    bottom: -150px;
     z-index: -1;
     max-width: 100%;
+    // opacity: .9;
   }
 }
 .hero-wrapper {
@@ -215,7 +223,7 @@ header {
   max-width: 960px;
   margin-inline: auto;
   text-align: center;
-  margin-top: 85px;
+  margin-top: 105px;
   border-radius: 32px;
   height: 100%;
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.01), 0 0 90px rgba(255, 255, 255, 0.05), 0 0 145px rgba(255, 255, 255, 0.1);
