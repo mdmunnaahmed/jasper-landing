@@ -50,10 +50,17 @@
         </form>
       </div>
       <div class="video-wrapper wow fadeIn" data-wow-delay="1s">
-        <video class="video-background" muted loop autoplay playsinline poster="./assets/img/poster.png">
+        <video id="video-background" class="video-background" muted loop playsinline poster="./assets/img/poster.png">
           <source src="./assets/img/video.mp4" type="video/mp4">
           Your browser does not support the video tag.
-        </video>
+      </video>
+        <script>
+          // Wait 5 seconds before starting the video
+          setTimeout(() => {
+            const video = document.getElementById("video-background");
+            video.play(); // Start the video
+          }, 5000); // 5000 ms = 5 seconds
+        </script>
       </div>
     </div>
   </section>
@@ -138,25 +145,25 @@
         <h2 class="section-title wow fadeInUp">Join The Journey.</h2>
         <p class="section-subtitle wow fadeInUp" data-wow-delay=".2s">Something special is coming, sign up to be the
           first to know more and gain access to our beta testing</p>
-          <ul class="check-list">
-            <li class="wow fadeInUp" data-wow-delay=".4s">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-check text-primary h-5 w-5">
-                <path d="M20 6 9 17l-5-5"></path>
-              </svg>
-              <span>Early access to Uplio
-              </span>
-            </li>
-            <li class="wow fadeInUp" data-wow-delay=".4s">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-check text-primary h-5 w-5">
-                <path d="M20 6 9 17l-5-5"></path>
-              </svg>
-              <span> Free trial period</span>
-            </li>
-          </ul>
+        <ul class="check-list">
+          <li class="wow fadeInUp" data-wow-delay=".4s">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-check text-primary h-5 w-5">
+              <path d="M20 6 9 17l-5-5"></path>
+            </svg>
+            <span>Early access to Uplio
+            </span>
+          </li>
+          <li class="wow fadeInUp" data-wow-delay=".4s">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-check text-primary h-5 w-5">
+              <path d="M20 6 9 17l-5-5"></path>
+            </svg>
+            <span> Free trial period</span>
+          </li>
+        </ul>
         <a href="#" class="button wow fadeInUp" id="joinBtn" data-wow-delay=".6s">Join waitlist</a>
       </div>
     </div>
