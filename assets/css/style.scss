@@ -417,6 +417,12 @@ header {
   .shape {
     display: none;
   }
+  .hero-wrapper {
+    .title {
+      font-size: 76px;
+      letter-spacing: -2.5px;
+    }
+  }
 }
 
 @media (max-width: 575px) {
@@ -476,5 +482,8 @@ header {
     .check-list {
       margin-top: 25px;
     }
+  }
+  .cta-section {
+    padding-bottom: 60px;
   }
 }
