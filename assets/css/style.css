@@ -45,6 +45,53 @@ h3 {
   margin-inline: auto;
 }
 
+header {
+  padding-block: 35px;
+}
+
+.header-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header-wrapper .logo img {
+  max-width: 175px;
+}
+.header-wrapper .gradient-button {
+  padding: 16px 30px;
+  font-size: 16px;
+  color: white;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  display: inline-block;
+  position: relative;
+  border-radius: 20px;
+  background-color: transparent;
+}
+.header-wrapper .gradient-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 12px;
+  padding: 2px;
+  background: linear-gradient(135deg, #ff00ff, #00ffff);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+}
+.header-wrapper .gradient-button span {
+  position: relative;
+  z-index: 1;
+}
+.header-wrapper .button {
+  height: 63px;
+  padding: 6px 24px;
+  font-size: 16px;
+}
+
 .hero-section {
   padding-block: 85px;
 }
@@ -66,6 +113,12 @@ h3 {
   border-radius: 25px;
   border: 1px solid rgba(115, 115, 115, 0.2);
   margin-bottom: 32px;
+}
+.top-badge a {
+  color: inherit;
+}
+.top-badge a:hover {
+  color: #00ffff;
 }
 
 .title {
@@ -133,7 +186,7 @@ h3 {
 }
 
 .video-wrapper {
-  max-width: 950px;
+  max-width: 960px;
   margin-inline: auto;
   text-align: center;
   margin-top: 85px;
@@ -164,7 +217,7 @@ h3 {
   z-index: 1;
   width: 100%;
   border-radius: 32px;
-  margin-bottom: -9px;
+  margin-bottom: -8px;
   padding: 2px;
 }
 
