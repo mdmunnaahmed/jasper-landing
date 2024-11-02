@@ -390,3 +390,69 @@ header {
 .cta-section .button:hover {
   background-color: white;
 }
+
+@media (max-width: 1200px) {
+  .feature-grid {
+    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .feature-item {
+    aspect-ratio: auto;
+    flex-direction: column !important;
+  }
+  .section-header .section-title {
+    font-size: 46px;
+  }
+  .shape {
+    display: none;
+  }
+}
+@media (max-width: 575px) {
+  header {
+    padding-block: 16px;
+  }
+  header .header-wrapper .logo img {
+    max-width: 130px;
+  }
+  header .header-wrapper .gradient-button {
+    padding: 8px 16px;
+  }
+  .hero-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .hero-wrapper .top-badge {
+    padding-top: 2px;
+    padding-bottom: 0;
+  }
+  .hero-wrapper .title {
+    font-size: 42px;
+    letter-spacing: -1.5px;
+  }
+  .subscription-wrapper .form-group {
+    flex-direction: column;
+  }
+  .subscription-wrapper .form-group svg {
+    top: 25px !important;
+  }
+  .feature-grid {
+    justify-content: center;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .feature-item {
+    aspect-ratio: auto;
+  }
+  .feature-item .icon {
+    width: 120px;
+  }
+  .feature-item .content .title {
+    font-size: 18px;
+  }
+  .section-header .section-title {
+    font-size: 30px;
+    letter-spacing: -1px;
+  }
+  .section-header .check-list {
+    margin-top: 25px;
+  }
+}

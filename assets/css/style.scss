@@ -73,7 +73,7 @@ header {
     background-color: transparent;
     overflow: hidden;
     border-radius: 12px;
-    transition: all .3s linear;
+    transition: all 0.3s linear;
     &:hover {
       box-shadow: 0 0 35px #b67eef60;
       &::after {
@@ -221,7 +221,7 @@ header {
       font-family: "GreycliffCF DemiBold", sans-serif;
       font-weight: 400;
       font-size: 16px;
-      transition: all .15s linear;
+      transition: all 0.15s linear;
       &:hover {
         background-color: white;
       }
@@ -391,7 +391,7 @@ header {
     font-family: "GreycliffCF DemiBold", sans-serif;
     font-weight: 400;
     font-size: 16px;
-    transition: all .15s linear;
+    transition: all 0.15s linear;
     margin-top: 32px;
     &:hover {
       background-color: white;
@@ -399,3 +399,82 @@ header {
   }
 }
 // Cta section end
+
+@media (max-width: 1200px) {
+  .feature-grid {
+    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .feature-item {
+    aspect-ratio: auto;
+    flex-direction: column !important;
+  }
+  .section-header {
+    .section-title {
+      font-size: 46px;
+    }
+  }
+  .shape {
+    display: none;
+  }
+}
+
+@media (max-width: 575px) {
+  header {
+    padding-block: 16px;
+    .header-wrapper {
+      .logo img {
+        max-width: 130px;
+      }
+      .gradient-button {
+        padding: 8px 16px;
+      }
+    }
+  }
+  .hero-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .hero-wrapper {
+    .top-badge {
+      padding-top: 2px;
+      padding-bottom: 0;
+    }
+    .title {
+      font-size: 42px;
+      letter-spacing: -1.5px;
+    }
+  }
+  .subscription-wrapper {
+    .form-group {
+      flex-direction: column;
+      svg {
+        top: 25px !important;
+      }
+    }
+  }
+  .feature-grid {
+    justify-content: center;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .feature-item {
+    aspect-ratio: auto;
+    .icon {
+      width: 120px;
+    }
+    .content {
+      .title {
+        font-size: 18px;
+      }
+    }
+  }
+  .section-header {
+    .section-title {
+      font-size: 30px;
+      letter-spacing: -1px;
+    }
+    .check-list {
+      margin-top: 25px;
+    }
+  }
+}
