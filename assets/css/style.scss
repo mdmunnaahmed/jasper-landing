@@ -535,6 +535,29 @@ header {
     height: 40px;
     padding-inline: 48px;
     margin-top: 35px;
-    // background-color: #;
+  }
+}
+
+.scrolling-text-wrapper {
+  display: flex;
+  overflow: hidden;
+  // gap: 50px;
+}
+
+.scrolling-text {
+  display: inline-block;
+  white-space: nowrap;
+  font-size: 18px;
+  animation: scroll 15s linear infinite;
+  padding-right: 50px;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0%);
+  }
+
+  to {
+    transform: translateX(-100%);
   }
 }

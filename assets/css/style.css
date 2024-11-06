@@ -507,3 +507,25 @@ header {
   padding-inline: 48px;
   margin-top: 35px;
 }
+
+.scrolling-text-wrapper {
+  display: flex;
+  overflow: hidden;
+}
+
+.scrolling-text {
+  display: inline-block;
+  white-space: nowrap;
+  font-size: 18px;
+  animation: scroll 15s linear infinite;
+  padding-right: 50px;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
