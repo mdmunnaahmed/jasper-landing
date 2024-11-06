@@ -463,3 +463,47 @@ header {
     padding-bottom: 60px;
   }
 }
+.thank-you-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+  padding: 40px;
+  background-color: #262626;
+  box-shadow: 0 4px 45px rgba(228, 203, 226, 0.3);
+  max-width: 480px;
+  width: 100%;
+  border-radius: 12px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, -50%) scale(0.9);
+  transition: all 0.3s linear;
+}
+.thank-you-popup.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+.thank-you-popup .email-icon {
+  max-width: 90px;
+  margin-bottom: 25px;
+}
+.thank-you-popup .title {
+  font-size: 60px;
+  margin-top: 0;
+  margin-bottom: 0px;
+  line-height: 1;
+}
+.thank-you-popup .subtitle {
+  font-family: "GreycliffCF Light", sans-serif;
+  margin-top: 10px;
+}
+.thank-you-popup .close {
+  box-shadow: none;
+  border: none;
+  outline: none;
+  height: 40px;
+  padding-inline: 48px;
+  margin-top: 35px;
+}

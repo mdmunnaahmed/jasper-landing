@@ -34,7 +34,10 @@
         <h1 class="title wow fadeInUp" data-wow-delay=".2s">Create Weeks of Content in Minutes</h1>
         <h2 class="subtitle wow fadeInUp" data-wow-delay=".4s">Helping creators grow and maximize their reach in a
           fraction of the time.</h2>
-        <form action="" class="subscription-wrapper wow fadeInUp" data-wow-delay=".6s">
+
+
+
+        <form action="" class="subscription-wrapper wow fadeInUp" data-wow-delay=".6s" id="emailForm">
           <div class="form-group">
             <div class="form-input">
               <svg xmlns="http://www.w3.org/2000/svg" width="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -43,17 +46,27 @@
                 <rect width="20" height="16" x="2" y="4" rx="2"></rect>
                 <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
               </svg>
-              <input type="text" class="form-control" id="emailInput" placeholder="Enter your email here...">
+              <input type="email" class="form-control" id="emailInput" placeholder="Enter your email here..." required>
             </div>
-            <button>Join waitlist</button>
+            <button type="submit">Join waitlist</button>
           </div>
         </form>
+
+        <div class="thank-you-popup active" id="thank-you-popup">
+          <img src="./assets/img/email.png" alt="email icon" class="email-icon">
+          <p class="title">Thank You!</p>
+          <p class="subtitle">Please check your inbox...</p>
+          <button class="close">Close</button>
+        </div>
+
+
       </div>
+
       <div class="video-wrapper wow fadeIn" data-wow-delay="1s">
         <video id="video-background" class="video-background" muted loop playsinline poster="./assets/img/poster.png">
           <source src="./assets/img/video.mp4" type="video/mp4">
           Your browser does not support the video tag.
-      </video>
+        </video>
         <script>
           // Wait 5 seconds before starting the video
           setTimeout(() => {
@@ -174,6 +187,40 @@
   <script src="./assets/js/jquery.js"></script>
   <script src="./assets/js/wow.min.js"></script>
   <script src="./assets/js/main.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+
+  <script type="text/javascript">
+    (function () {
+      // Initialize EmailJS with your public key
+      emailjs.init("zHoEo9nqo5YoZqWRx");
+    })();
+
+    document.getElementById('emailForm').addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent the form from submitting the traditional way
+
+      // Get the email input value
+      var emailInput = document.getElementById('emailInput').value;
+
+      // Send email using EmailJS
+      emailjs.send("service_fqhbhfk", "template_e7d0r8h", {
+        user_email: emailInput  // Pass the user's email here for sending the welcome email
+      })
+        .then(function (response) {
+          console.log('Email successfully sent!', response.status, response.text);
+          // alert("You have been added to the waitlist!");
+          document.querySelector('#thank-you-popup').classList.add('active')
+        }, function (error) {
+          console.log('Failed to send email.', error);
+        });
+    });
+
+    document.querySelector('.close').addEventListener('click', function (e) {
+      document.querySelector('#thank-you-popup').classList.remove('active')
+    })
+  </script>
+
+
 </body>
 
 </html>
