@@ -508,24 +508,30 @@ header {
   margin-top: 35px;
 }
 
-.scrolling-text-wrapper {
-  display: flex;
-  overflow: hidden;
-}
-
+/* Typing animation */
 .scrolling-text {
-  display: inline-block;
-  white-space: nowrap;
+  display: flex;
+  flex-wrap: wrap;
+  opacity: 1;
+  text-align: center;
+  justify-content: center;
   font-size: 18px;
-  animation: scroll 15s linear infinite;
-  padding-right: 50px;
 }
 
-@keyframes scroll {
-  from {
-    transform: translateX(0%);
+.scrolling-text .letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateX(-20px); /* Start slightly left */
+  animation: fadeInMove 0.5s forwards; /* Animation to apply on each letter */
+}
+
+@keyframes fadeInMove {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
   }
-  to {
-    transform: translateX(-100%);
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
