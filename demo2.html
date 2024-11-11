@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <p class="msg relative group">
+    <span class="msg-content text-[14px]">{{ message.content|remove_ts }}</span>
+    <br>
+    <span class="timer text-[10px] !text-light block text-right">{{ message.ts }}</span>
+    
+    <!-- Edit Button -->
+    <div class="absolute -left-4 bottom-0 -translate-x-full text-end flex flex-col gap-2 justify-end items-end">
+        <div class="flex gap-1 update-and-cancel hidden">
+            <button class="cancel w-6 h-6 bg-bgbody flex items-center justify-center rounded-full">
+                <svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.598633 5.4001L5.39863 0.600098M0.598633 0.600098L5.39863 5.4001" stroke="#555555" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <button class="update w-6 h-6 bg-bgbody flex items-center justify-center rounded-full">
+                <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.00098 4.30005L3.40098 6.70005L7.00098 1.30005" stroke="#555555" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+        <button class="edit-button h-[30px] w-[30px] flex items-center justify-center bg-black rounded-full">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_3811_13421)">
+                    <path d="M8.431 2.24338L9.2745 1.39938C9.45034 1.22354 9.68883 1.12476 9.9375 1.12476C10.1862 1.12476 10.4247 1.22354 10.6005 1.39938C10.7763 1.57522 10.8751 1.81371 10.8751 2.06238C10.8751 2.31105 10.7763 2.54954 10.6005 2.72538L3.416 9.90988C3.15166 10.1741 2.82568 10.3682 2.4675 10.4749L1.125 10.8749L1.525 9.53238C1.63164 9.1742 1.82582 8.84822 2.09 8.58388L8.4315 2.24338H8.431ZM8.431 2.24338L9.75 3.56238" stroke="white" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+                <defs>
+                    <clipPath id="clip0_3811_13421">
+                        <rect width="12" height="12" fill="white"/>
+                    </clipPath>
+                </defs>
+            </svg>
+        </button>
+    </div>
+</p><p class="msg relative group">
+  <span class="msg-content text-[14px]">{{ message.content|remove_ts }}</span>
+  <br>
+  <span class="timer text-[10px] !text-light block text-right">{{ message.ts }}</span>
+  
+  <!-- Edit Button -->
+  <div class="absolute -left-4 bottom-0 -translate-x-full text-end flex flex-col gap-2 justify-end items-end">
+      <div class="flex gap-1 update-and-cancel hidden">
+          <button class="cancel w-6 h-6 bg-bgbody flex items-center justify-center rounded-full">
+              <svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0.598633 5.4001L5.39863 0.600098M0.598633 0.600098L5.39863 5.4001" stroke="#555555" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+          </button>
+          <button class="update w-6 h-6 bg-bgbody flex items-center justify-center rounded-full">
+              <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1.00098 4.30005L3.40098 6.70005L7.00098 1.30005" stroke="#555555" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+          </button>
+      </div>
+      <button class="edit-button h-[30px] w-[30px] flex items-center justify-center bg-black rounded-full">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_3811_13421)">
+                  <path d="M8.431 2.24338L9.2745 1.39938C9.45034 1.22354 9.68883 1.12476 9.9375 1.12476C10.1862 1.12476 10.4247 1.22354 10.6005 1.39938C10.7763 1.57522 10.8751 1.81371 10.8751 2.06238C10.8751 2.31105 10.7763 2.54954 10.6005 2.72538L3.416 9.90988C3.15166 10.1741 2.82568 10.3682 2.4675 10.4749L1.125 10.8749L1.525 9.53238C1.63164 9.1742 1.82582 8.84822 2.09 8.58388L8.4315 2.24338H8.431ZM8.431 2.24338L9.75 3.56238" stroke="white" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+              <defs>
+                  <clipPath id="clip0_3811_13421">
+                      <rect width="12" height="12" fill="white"/>
+                  </clipPath>
+              </defs>
+          </svg>
+      </button>
+  </div>
+</p>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.edit-button').forEach((editButton) => {
+      editButton.addEventListener('click', (event) => {
+        const clickedButton = event.currentTarget; // Get the clicked edit button
+        let prevent;
+
+        if (prevent) {
+          return;
+        }
+
+        // ... rest of your code using `clickedButton` ...
+
+        const editButtonParent = clickedButton.closest('div');
+        const msgElement = editButtonParent.previousElementSibling;
+        const msgContent = msgElement.querySelector('.msg-content');
+
+        const updateAndCancel = editButtonParent.querySelector('.update-and-cancel');
+
+        // Check if the required elements exist
+        if (!msgContent || !updateAndCancel) {
+          console.error('msg-content or update-and-cancel not found');
+          return;
+        }
+
+        // Check if a textarea already exists; if so, remove it
+        const existingTextarea = msgElement.querySelector('textarea');
+        if (existingTextarea) {
+          existingTextarea.remove();
+        }
+
+        // Create a textarea and set its value and dimensions based on .msg-content
+        const textarea = document.createElement('textarea');
+        textarea.className = 'msg-content text-[var(--primary)]';
+        textarea.value = msgContent.textContent;
+        textarea.style.width = `${msgElement.clientWidth}px`;
+        textarea.style.height = `${msgElement.clientHeight}px`;
+
+        if (textarea) {
+          prevent = true;
+        }
+
+        // Hide the original .msg-content, insert textarea, and show update/cancel buttons
+        msgContent.style.display = 'none';
+        msgContent.after(textarea);
+        updateAndCancel.style.display = 'flex';
+
+        // Set the cancel button functionality
+        const cancelButton = updateAndCancel.querySelector('.cancel');
+        cancelButton.onclick = () => {
+          textarea.remove();
+          msgContent.style.display = ''; // Restore original content
+          updateAndCancel.style.display = 'none'; // Hide buttons
+        };
+
+        // Set the update button functionality
+        const updateButton = updateAndCancel.querySelector('.update');
+        updateButton.onclick = () => {
+          msgContent.textContent = textarea.value;
+          textarea.remove();
+          msgContent.style.display = ''; // Restore original content
+          updateAndCancel.style.display = 'none'; // Hide buttons
+        };
+        console.log(1234);
+        
+      });
+    });
+  });
+
+  </script>
+</body>
+</html>
