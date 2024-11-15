@@ -4,9 +4,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Uplio | AI Content Repurposing for Creators & Podcasters</title>
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="./assets/css/animate.css">
+
+
+  <!-- Title of the page -->
+  <title>Uplio | AI Content Repurposing for Creators & Podcasters</title>
+
+  <!-- Meta description -->
+  <meta name="description"
+    content="Transform podcasts and videos into weeks of engaging social content automatically. Save hours with AI-powered content repurposing.">
+
+  <!-- Meta keywords -->
+  <meta name="keywords"
+    content="content automation, podcast software, social media automation, AI content, AI social media, content automation, Podcast AI tools, AI video clip generator, AI Writing, YouTube content AI, turn long videos into social media content, podcast to YouTube shorts, AI social media content generator, turn podcast into social media content, AI for content creators, content marketing AI tools">
+
+  <!-- Author -->
+  <meta name="author" content="Uplio">
+
+  <!-- Open Graph (for social media sharing) -->
+  <meta property="og:title" content="Uplio | AI Content Repurposing for Creators & Podcasters">
+  <meta property="og:description"
+    content="Transform podcasts and videos into weeks of engaging social content automatically. Save hours with AI-powered content repurposing.">
+  <meta property="og:image" content="./assets/img/share-img.jpg">
+  <meta property="og:url" content="https://uplio.dev">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Uplio | AI Content Repurposing for Creators & Podcasters">
+  <meta name="twitter:description"
+    content="Transform podcasts and videos into weeks of engaging social content automatically. Save hours with AI-powered content repurposing.">
+  <meta name="twitter:image" content="./assets/img/share-img.jpg">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="./assets/img/favicon.png">
+  <link rel="shortcut icon" href="./assets/img/favicon.png">
 </head>
 
 <body>
@@ -210,13 +245,13 @@
       // Initialize EmailJS with your public key
       emailjs.init("zHoEo9nqo5YoZqWRx");
     })();
-  
+
     document.getElementById('emailForm').addEventListener('submit', function (event) {
       event.preventDefault(); // Prevent the form from submitting the traditional way
-  
+
       // Get the email input value
       var emailInput = document.getElementById('emailInput').value;
-  
+
       // Send email using EmailJS
       emailjs.send("service_fqhbhfk", "template_e7d0r8h", {
         user_email: emailInput  // Pass the user's email here for sending the welcome email
@@ -226,12 +261,12 @@
           // Show the popup
           const popup = document.querySelector('#thank-you-popup');
           popup.classList.add('active');
-  
+
           // Start progress bar animation
           const bottomLine = document.querySelector('.bottom-line');
           bottomLine.style.transition = 'width 6s linear';
           bottomLine.style.width = '100%';
-  
+
           // Remove active class after 6 seconds
           setTimeout(() => {
             popup.classList.remove('active');
@@ -241,7 +276,7 @@
           console.log('Failed to send email.', error);
         });
     });
-  
+
     document.querySelector('.close').addEventListener('click', function (e) {
       const popup = document.querySelector('#thank-you-popup');
       const bottomLine = document.querySelector('.bottom-line');
@@ -249,7 +284,7 @@
       bottomLine.style.width = '0%'; // Reset progress bar
     });
   </script>
-  
+
 
 
 </body>
