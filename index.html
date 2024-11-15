@@ -53,10 +53,15 @@
         </form>
 
         <div class="thank-you-popup" id="thank-you-popup">
-          <img src="./assets/img/email.png" alt="email icon" class="email-icon">
-          <p class="title">Thank You!</p>
-          <p class="subtitle">You’re in. Check your inbox for more details…</p>
-          <button class="close">Close</button>
+          <div class="popup-inner">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+              <path fill="currentColor"
+                d="m9.55 15.15l8.475-8.475q.3-.3.7-.3t.7.3t.3.713t-.3.712l-9.175 9.2q-.3.3-.7.3t-.7-.3L4.55 13q-.3-.3-.288-.712t.313-.713t.713-.3t.712.3z" />
+            </svg>
+            <p class="subtitle">you’re in! Check your inbox</p>
+          </div>
+          <span class="bottom-line" style="width: 10%;"></span>
+          <!-- <button class="close">x</button>  -->
         </div>
 
 
@@ -82,7 +87,9 @@
   <div style="padding-top: 100px;"></div>
   <div class="container" id="scroll-section">
     <div class="scrolling-text-wrapper">
-      <p class="scrolling-text wow fadeInUp" data-text="uplio is set to be the all-in-one solution for creators looking to streamline the content creation process.">uplio is set to be the all-in-one solution for creators looking to streamline the content creation process.</p>
+      <p class="scrolling-text wow fadeInUp"
+        data-text="uplio is set to be the all-in-one solution for creators looking to streamline the content creation process.">
+        uplio is set to be the all-in-one solution for creators looking to streamline the content creation process.</p>
     </div>
   </div>
 
@@ -203,30 +210,46 @@
       // Initialize EmailJS with your public key
       emailjs.init("zHoEo9nqo5YoZqWRx");
     })();
-
+  
     document.getElementById('emailForm').addEventListener('submit', function (event) {
       event.preventDefault(); // Prevent the form from submitting the traditional way
-
+  
       // Get the email input value
       var emailInput = document.getElementById('emailInput').value;
-
+  
       // Send email using EmailJS
       emailjs.send("service_fqhbhfk", "template_e7d0r8h", {
         user_email: emailInput  // Pass the user's email here for sending the welcome email
       })
         .then(function (response) {
           console.log('Email successfully sent!', response.status, response.text);
-          // alert("You have been added to the waitlist!");
-          document.querySelector('#thank-you-popup').classList.add('active')
+          // Show the popup
+          const popup = document.querySelector('#thank-you-popup');
+          popup.classList.add('active');
+  
+          // Start progress bar animation
+          const bottomLine = document.querySelector('.bottom-line');
+          bottomLine.style.transition = 'width 6s linear';
+          bottomLine.style.width = '100%';
+  
+          // Remove active class after 6 seconds
+          setTimeout(() => {
+            popup.classList.remove('active');
+            bottomLine.style.width = '0%'; // Reset progress bar
+          }, 6000);
         }, function (error) {
           console.log('Failed to send email.', error);
         });
     });
-
+  
     document.querySelector('.close').addEventListener('click', function (e) {
-      document.querySelector('#thank-you-popup').classList.remove('active')
-    })
+      const popup = document.querySelector('#thank-you-popup');
+      const bottomLine = document.querySelector('.bottom-line');
+      popup.classList.remove('active');
+      bottomLine.style.width = '0%'; // Reset progress bar
+    });
   </script>
+  
 
 
 </body>

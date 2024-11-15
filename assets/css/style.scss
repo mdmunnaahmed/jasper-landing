@@ -495,26 +495,38 @@ header {
 // thank you pop
 .thank-you-popup {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 20px;
+  right: 150px;
+  // transform: translate(-50%, -50%);
   z-index: 99;
-  padding: 40px;
-  background-color: #010101d0;
-  box-shadow: 0 4px 45px rgba(87, 85, 87, 0.3);
-  border: 1px solid #fafafa20;
-  backdrop-filter: blur(15px);
-  max-width: 480px;
+  padding: 24px;
+  background-color: #111111;
+  // box-shadow: 0 4px 45px rgba(87, 85, 87, 0.3);
+  // border: 1px solid #fafafa20;
+  max-width: 380px;
   width: 100%;
   border-radius: 12px;
   opacity: 0;
   visibility: hidden;
-  transform: translate(-50%, -50%) scale(0.9);
+  // transform: translate(-50%, -50%) scale(0.9);
   transition: all 0.3s linear;
+  overflow: hidden;
+  .bottom-line {
+    height: 3px;
+    background-color: #a8a6a6;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+  .popup-inner {
+    display: flex;
+    gap: 10px;
+  }
   &.active {
     opacity: 1;
     visibility: visible;
-    transform: translate(-50%, -50%) scale(1);
+    // transform: translate(-50%, -50%) scale(1);
   }
   .email-icon {
     max-width: 90px;
@@ -528,17 +540,22 @@ header {
   }
   .subtitle {
     font-family: "GreycliffCF Light", sans-serif;
-    margin-top: 10px;
+    margin: 0;
+    color: white;
   }
   .close {
     box-shadow: none;
     border: none;
     outline: none;
-    height: 40px;
-    padding-inline: 48px;
-    margin-top: 35px;
-    color: #010101;
+    height: 24px;
+    padding-inline: 0;
+    color: red;
     font-weight: 500;
+    background-color: transparent;
+    padding-block: 10px;
+    position: absolute;
+    right: 20px;
+    top: 5px;
   }
 }
 
@@ -555,7 +572,6 @@ header {
   // opacity: 0;
   // transition: opacity 1s ease-in; /* 1-second fade-in */
 }
-
 
 // .scrolling-text .letter {
 //   display: inline-block;
