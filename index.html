@@ -124,8 +124,6 @@
           }, 3000);
 
           const audioToggle = document.querySelector('.audio-toggle');
-          const muteIcon = document.querySelector('.mute');
-          const loudIcon = document.querySelector('.loud');
           const video = document.getElementById('video-background');
 
           audioToggle.addEventListener('click', function () {
@@ -134,7 +132,6 @@
               audioToggle.classList.add('active');
             } else {
               video.muted = true;
-              muteIcon.classList.add('active');
               audioToggle.classList.remove('active');
             }
           });
