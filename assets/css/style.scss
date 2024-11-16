@@ -590,3 +590,26 @@ header {
 //     transform: translateX(0);
 //   }
 // }
+
+.audio-toggle {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  z-index: 1;
+  padding: 10px;
+  cursor: pointer;
+  svg {
+    display: none;
+  }
+  .mute {
+    display: block;
+  }
+  &.active {
+    .mute {
+      display: none;
+    }
+    .loud {
+      display: block;
+    }
+  }
+}

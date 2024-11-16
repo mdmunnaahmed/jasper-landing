@@ -534,3 +534,23 @@ header {
 }
 
 /* Set initial opacity to 0 and apply a transition */
+.audio-toggle {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  z-index: 1;
+  padding: 10px;
+  cursor: pointer;
+}
+.audio-toggle svg {
+  display: none;
+}
+.audio-toggle .mute {
+  display: block;
+}
+.audio-toggle.active .mute {
+  display: none;
+}
+.audio-toggle.active .loud {
+  display: block;
+}

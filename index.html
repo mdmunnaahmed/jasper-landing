@@ -107,11 +107,37 @@
           <source src="./assets/img/video.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
+        <div class="audio-toggle">
+          <svg class="loud" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+            <path fill="currentColor"
+              d="M19 11.975q0-2.075-1.1-3.787t-2.95-2.563q-.375-.175-.55-.537t-.05-.738q.15-.4.538-.575t.787 0Q18.1 4.85 19.55 7.063T21 11.974t-1.45 4.913t-3.875 3.287q-.4.175-.788 0t-.537-.575q-.125-.375.05-.737t.55-.538q1.85-.85 2.95-2.562t1.1-3.788M7 15H4q-.425 0-.712-.288T3 14v-4q0-.425.288-.712T4 9h3l3.3-3.3q.475-.475 1.088-.213t.612.938v11.15q0 .675-.612.938T10.3 18.3zm9.5-3q0 1.05-.475 1.988t-1.25 1.537q-.25.15-.513.013T14 15.1V8.85q0-.3.263-.437t.512.012q.775.625 1.25 1.575t.475 2" />
+          </svg>
+          <svg class="mute" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+            <path fill="currentColor"
+              d="m18 13.4l-1.9 1.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l1.9-1.9l-1.9-1.9q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l1.9 1.9l1.9-1.9q.275-.275.7-.275t.7.275t.275.7t-.275.7L19.4 12l1.9 1.9q.275.275.275.7t-.275.7t-.7.275t-.7-.275zM7 15H4q-.425 0-.712-.288T3 14v-4q0-.425.288-.712T4 9h3l3.3-3.3q.475-.475 1.088-.213t.612.938v11.15q0 .675-.612.938T10.3 18.3zm3-6.15L7.85 11H5v2h2.85L10 15.15zM7.5 12" />
+          </svg>
+        </div>
         <script>
           setTimeout(() => {
             const video = document.getElementById("video-background");
             video.play();
           }, 3000);
+
+          const audioToggle = document.querySelector('.audio-toggle');
+          const muteIcon = document.querySelector('.mute');
+          const loudIcon = document.querySelector('.loud');
+          const video = document.getElementById('video-background');
+
+          audioToggle.addEventListener('click', function () {
+            if (video.muted) {
+              video.muted = false;
+              audioToggle.classList.add('active');
+            } else {
+              video.muted = true;
+              muteIcon.classList.add('active');
+              audioToggle.classList.remove('active');
+            }
+          });
         </script>
       </div>
     </div>
@@ -253,7 +279,7 @@
 
       // Send email using EmailJS
       emailjs.send("service_fqhbhfk", "template_e7d0r8h", {
-        user_email: emailInput  // Pass the user's email here for sending the welcome email
+        user_email: emailInput
       })
         .then(function (response) {
           console.log('Email successfully sent!', response.status, response.text);
